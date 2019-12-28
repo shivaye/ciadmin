@@ -14,6 +14,17 @@ $config=[
 				],
 
 
+				'prfile_form'=>[
+
+					[
+						'feild'=>'name',
+						'label'=>'Name',
+						'rules'=>'required|alpha'
+					],
+
+				],
+
+
 ];
 
 

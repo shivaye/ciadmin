@@ -86,9 +86,20 @@ class Admin extends MY_Controller
 	public function profile_update()
 	{
 
-		if($this->form_validation->run('update_profile_form')) { echo "ok";
-	}else{
-		$this->load->view('admin/profile'); }
+			echo $email = $this->input->post('email');
+			echo $name = $this->input->post('name');
+			$this->load->model('loginmodel','updateadmin');
+			if($this->editupdate->update_article($article_id,$post))
+			{
+				$this->session->set_flashdata('msg','Article Update successfully');
+				$this->session->set_flashdata('msg_class','alert-success');
+			}
+			else
+			{
+				$this->session->set_flashdata('msg','Articles not update Please try again!!');
+				$this->session->set_flashdata('msg_class','alert-danger');
+			}
+		
 
 	}
 
